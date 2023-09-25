@@ -5,12 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Souscategorie extends Model
+class Question extends Model
 {
-    protected $table = 'sous_categorie';
+    protected $table = "questions";
+
     protected $fillable = [
         'id',
-        'nom',
+        'title',
+        'content',
+        'id_users',
+        'id_sous_categorie',
+
     ];
 }

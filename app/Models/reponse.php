@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ajouter extends Model
+class reponse extends Model
 {
-    protected $table = "users_sous_categorie";
-    
+    protected $table = 'reponse';
     protected $fillable = [
-        'nom',
+        'id',
+        'content',
+        'status',
+        'id_questions',
     ];
 
 }

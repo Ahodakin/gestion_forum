@@ -21,15 +21,15 @@
                 <h6 class="mb-4">Sélectionnez quelque chose</h6>
                 <select id="categorie" class=" categorie form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="carte">
                     <option selected> Catégorie </option>
-                   @foreach($cat as $cats)
-                    <option value="{{ $cats->id }}"> {{ $cats->nom }}</option>
+                   @foreach($categorie as $categories)
+                    <option value="{{ $categories->id }}"> {{ $categories->nom }}</option>
                    @endforeach
                 </select>
 
-                <select id="sous_categorie" class="souscategorie form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="sous_carte">
+                <select id="sous_categorie" class="souscategorie form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="id_sous">
                     <option selected> Sous Categorie </option>
-                    @foreach($souscat  as $souscats)
-                        <option value="{{ $souscats->id }}"> {{ $souscats->nom }}</option>
+                    @foreach($souscategorie  as $souscategories)
+                        <option value="{{ $souscategories->id }}"> {{ $souscategories->nom }}</option>
                    @endforeach
                 </select>
 

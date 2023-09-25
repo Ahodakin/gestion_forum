@@ -8,14 +8,16 @@
                     <a class="btn btn-sm btn-primary" href="{{ Route('ajouter') }}">Ajouter</a>
                 </div>
                 <div class="table-responsive">
-                    <div class="card border-success mb-3" style="max-width: 50rem;">
-                        <div class="card-header bg-transparent border-success">Categorie</div>
-                        <div class="card-body text-success">
-                            <a href=""><h2 class="card-title" style="color:blue;">Title</h2></a>
-                          <p class="card-text">Contenu</p>
+                    @foreach($recup as $recups)
+                        <div class="card border-danger mb-3" style="max-width: 50rem;">
+                            <div class="card-header bg-transparent border-success">Categorie</div>
+                            <div class="card-body text-success">
+                                <a href=""><h2 class="card-title" style="color:blue;">{{ $recups->title }}</h2></a>
+                            <p class="card-text">{{ $recups->content }}</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success">Sous Categorie/ {{ $recups->id_sous_categorie }}</div>
                         </div>
-                        <div class="card-footer bg-transparent border-success">Sous Categorie</div>
-                      </div>
+                      @endforeach
                 </div>
             </div>
         </div>

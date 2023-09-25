@@ -4,7 +4,7 @@
     <div class=" col-xl-10">
         <div class="bg-secondary rounded h-100 p-4">
 
-            {{--  <div>
+            <div>
                 @if($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -22,7 +22,7 @@
                 @if(session()->has('success'))
                     <div class="alert alert-success">{{session('success')}}</div>
                 @endif
-            </div>  --}}
+            </div>
 
             <h6 class="mb-4">Publish</h6>
             <form action="/publish_post" method="POST">

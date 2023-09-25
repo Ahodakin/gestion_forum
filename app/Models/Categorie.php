@@ -11,6 +11,7 @@ class Categorie extends Model
 
     protected $table = "categorie";
     protected $fillable = [
+        'id',
         'nom',
     ];
 }

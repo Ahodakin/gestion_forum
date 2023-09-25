@@ -48,8 +48,8 @@ class AuthController extends Controller
 
             if(auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])){
                 $request->session()->regenerate();
-                // $userId = auth()->User()->id_user;
                 $userId = Auth::id();
+
                 return redirect('ajouter');
             }else{
                 return back()->with('error', 'Email ou mot de passe incorrect');
