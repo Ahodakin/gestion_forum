@@ -11,6 +11,6 @@ class Souscategorie extends Model
     protected $table = 'sous_categorie';
     protected $fillable = [
         'id',
-        'nom',
+        'nom'
     ];
 }

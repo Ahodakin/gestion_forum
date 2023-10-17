@@ -46,7 +46,7 @@
 
         <!-- Form Start -->
         <div class="container-fluid pt-10 px-4 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-            <div class="col-sm-12 col-xl-6">
+            <div class="col-sm-6 col-xl-6">
                 <div class="bg-secondary rounded h-100 p-4">
 
                     <div>

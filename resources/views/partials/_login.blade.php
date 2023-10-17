@@ -33,6 +33,13 @@
 </head>
 
 <body>
+
+    <nav class="navbar bg-secondary  sticky-top">
+        <div class="mx-auto">
+            <h1>Forum Tech</h1>
+        </div>
+    </nav>
+
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -44,9 +51,9 @@
 
         <!-- Form Start -->
 
-        <div class="container-fluid pt-10 px-4 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-            <div class="col-sm-12 col-xl-6">
-                <div class="bg-secondary rounded h-100 p-4">
+        <div class="container-fluid pt-10 px-4 d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+            <div class="col-sm-6 col-xl-6">
+                <div class="bg-secondary p-4 rounded-pill">
 
                     <div>
                         @if($errors->any())
@@ -68,21 +75,25 @@
                         @endif
                     </div>
 
+                    <div class=" d-flex align-items-center">
+                        <h2 class="mx-auto">Connectez-vous</h2>
+                    </div><br>
 
-
-                    <h6 class="mb-4">Login</h6>
                     <form action="{{ route('login') }}" method="POST">
                         @csrf
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="loginemail" id="email" required>
+                        <div class="mb-3 text-center">
+                            <input type="email" class="" name="loginemail" id="email" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="loginpassword" id="password" required>
+
+                        <div class="mb-3 text-center">
+                            <input type="password" class="" name="loginpassword" id="password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Envoi</button>
-                        <p>Je nai pas de compte, <a href="{{ route('signup') }}">je me signup</a></p>
+
+                        <div class="mb-3 text-center">
+                            <button type="submit" class="btn btn-primary">Connexion</button>
+                        </div>
+
+                        <p class="text-center  mx-auto">Si pas de compte, <a href="{{ route('signup') }}">je minscrire</a></p>
                     </form>
 
                 </div>

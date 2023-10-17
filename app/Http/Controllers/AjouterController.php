@@ -38,7 +38,7 @@ class AjouterController extends Controller
         $publish-> id_sous_categorie=$sous_cat->last()->id;
         $publish->save();
 
-         return redirect('/')->with('status', 'Question publié.');
+         return redirect('liste')->with('status', 'Question publié.');
 
         // return to_route('publish');
     }

@@ -2,6 +2,6 @@
 
 @section('content')
 
-    @include('partials._ajouter')
+    @include('partials._liste')
 
 @endsection

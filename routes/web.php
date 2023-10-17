@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth'])->group(function () {
     // Vos routes protégées ici
     Route::get('/', [HomeController::class, 'accueil'])->name('index');
-    Route::get('ajouter', [HomeController::class, 'ajouter'])->name('ajouter');
+    Route::get('liste', [HomeController::class, 'liste'])->name('liste');
 });
 
     Route::post('/ajouter_get', [AjouterController::class, 'ajouter_get'])->name('ajouter_get');
@@ -38,3 +38,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('publish', [HomeController::class, 'publish_question'])->name('publish');
+    Route::get('categorie', [HomeController::class, 'categorie'])->name('categorie');
+    Route::post('categorie_post', [HomeController::class, 'categorie_post'])->name('categorie_post');
+    Route::get('sous_categorie', [HomeController::class, 'sous_categorie'])->name('sous_categorie');
+    Route::get('reponse', [HomeController::class, 'reponse'])->name('reponse');
+    Route::get('liste_categorie', [HomeController::class, 'liste_categorie'])->name('liste_categorie');

@@ -50,7 +50,7 @@ class AuthController extends Controller
                 $request->session()->regenerate();
                 $userId = Auth::id();
 
-                return redirect('ajouter');
+                return redirect('liste');
             }else{
                 return back()->with('error', 'Email ou mot de passe incorrect');
             }

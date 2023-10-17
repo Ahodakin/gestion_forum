@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #EB1616;
+    --primary: #fff;
     --secondary: #191C24;
     --light: #6C7293;
     --dark: #000000;
@@ -27,6 +27,15 @@
     transition: opacity .5s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
+}
+
+.custom-input {
+    /* Styles personnalisés ici */
+    width: 50%;
+    height: 50%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 
@@ -78,7 +87,7 @@
 
 .content {
     margin-left: 250px;
-    min-height: 100vh;
+    min-height: 50vh;
     background: var(--dark);
     transition: 0.5s;
 }
@@ -119,23 +128,24 @@
 
 
 /*** Navbar ***/
-.sidebar .navbar .navbar-nav .nav-link {
+/* .sidebar .navbar .navbar-nav .nav-link {
     padding: 7px 20px;
     color: var(--light);
     font-weight: 500;
     border-left: 3px solid var(--secondary);
     border-radius: 0 30px 30px 0;
     outline: none;
-}
+} */
 
+/*
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
     color: var(--primary);
     background: var(--dark);
     border-color: var(--primary);
-}
+} */
 
-.sidebar .navbar .navbar-nav .nav-link i {
+/* .sidebar .navbar .navbar-nav .nav-link i {
     width: 40px;
     height: 40px;
     display: inline-flex;
@@ -143,14 +153,14 @@
     justify-content: center;
     background: var(--dark);
     border-radius: 40px;
-}
+} */
 
-.sidebar .navbar .navbar-nav .nav-link:hover i,
+/* .sidebar .navbar .navbar-nav .nav-link:hover i,
 .sidebar .navbar .navbar-nav .nav-link.active i {
     background: var(--secondary);
-}
+} */
 
-.sidebar .navbar .dropdown-toggle::after {
+/* .sidebar .navbar .dropdown-toggle::after {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -159,36 +169,47 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     transition: .5s;
-}
+} */
 
-.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
+/* .sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
     transform: rotate(-180deg);
-}
+} */
 
 .sidebar .navbar .dropdown-item {
-    padding-left: 25px;
+    padding-left: 50px;
+    margin: 0;
     border-radius: 0 30px 30px 0;
-    color: var(--light);
+    color: var(--primary);
+    background: var(--dark);
+    transition: background-color 0.3s;
+
 }
 
-.sidebar .navbar .dropdown-item:hover,
+.sidebar .navbar .dropdown-item:active {
+    background-color: red;
+    color: white;
+
+}
+
+/* .sidebar .navbar .dropdown-item:hover,
 .sidebar .navbar .dropdown-item.active {
     background: var(--dark);
-}
+} */
 
-.content .navbar .navbar-nav .nav-link {
+/* .content .navbar .navbar-nav .nav-link {
     margin-left: 25px;
     padding: 12px 0;
     color: var(--light);
     outline: none;
-}
+} */
 
-.content .navbar .navbar-nav .nav-link:hover,
+/* .content .navbar .navbar-nav .nav-link:hover,
 .content .navbar .navbar-nav .nav-link.active {
     color: var(--primary);
-}
+    background: var(--primary);
+} */
 
-.content .navbar .sidebar-toggler,
+/* .content .navbar .sidebar-toggler,
 .content .navbar .navbar-nav .nav-link i {
     width: 40px;
     height: 40px;
@@ -197,16 +218,17 @@
     justify-content: center;
     background: var(--dark);
     border-radius: 40px;
-}
+} */
 
-.content .navbar .dropdown-item {
+/* .content .navbar .dropdown-item {
     color: var(--light);
-}
 
-.content .navbar .dropdown-item:hover,
+} */
+
+/* .content .navbar .dropdown-item:hover,
 .content .navbar .dropdown-item.active {
     background: var(--dark);
-}
+} */
 
 .content .navbar .dropdown-toggle::after {
     margin-left: 6px;
@@ -258,21 +280,21 @@
 
 
 /*** Testimonial ***/
-.progress .progress-bar {
+/* .progress .progress-bar {
     width: 0px;
     transition: 2s;
-}
+} */
 
 
 /*** Testimonial ***/
-.testimonial-carousel .owl-dots {
+/* .testimonial-carousel .owl-dots {
     margin-top: 24px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-}
+} */
 
-.testimonial-carousel .owl-dot {
+/* .testimonial-carousel .owl-dot {
     position: relative;
     display: inline-block;
     margin: 0 5px;
@@ -281,9 +303,9 @@
     border: 5px solid var(--primary);
     border-radius: 15px;
     transition: .5s;
-}
+} */
 
-.testimonial-carousel .owl-dot.active {
+/* .testimonial-carousel .owl-dot.active {
     background: var(--dark);
     border-color: var(--primary);
-}
+} */
