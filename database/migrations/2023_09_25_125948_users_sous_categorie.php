@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('users_sous_categorie', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_users')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('id_sous_categorie')->constrained('sous_categorie')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_users');
+            $table->foreign('id_users')->references('id')->on('users');
+            $table->unsignedBigInteger('id_sous_categorie');
+            $table->foreign('id_sous_categorie')->references('id')->on('sous_categorie');
             $table->timestamps();
         });
     }

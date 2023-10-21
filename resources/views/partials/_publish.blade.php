@@ -37,10 +37,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="id_sous">Sous Catégorie</label>
-                    <select class="form-select form-select-lg mb-3" name="id_sous" required>
+                    <select class="form-select form-select-lg mb-3" name="nom_sous_categorie" required>
                         <option value="" selected>Choisissez une sous-catégorie</option>
                         @foreach($souscategorie as $souscategories)
-                            <option value="{{ $souscategories->id }}">{{ $souscategories->nom }}</option>
+                            <option value="{{ $souscategories->nom}}">{{ $souscategories->nom }}</option>
                         @endforeach
                     </select>
                 </div>

@@ -11,6 +11,12 @@ class Souscategorie extends Model
     protected $table = 'sous_categorie';
     protected $fillable = [
         'id',
-        'nom'
+        'nom',
+        'id_categorie',
     ];
+
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class, 'id_categorie', 'id');
+    }
 }

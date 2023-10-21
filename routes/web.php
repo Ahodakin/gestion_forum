@@ -41,5 +41,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('categorie', [HomeController::class, 'categorie'])->name('categorie');
     Route::post('categorie_post', [HomeController::class, 'categorie_post'])->name('categorie_post');
     Route::get('sous_categorie', [HomeController::class, 'sous_categorie'])->name('sous_categorie');
+    Route::post('souscategorie', [HomeController::class, 'sous_categoriepost'])->name('souscategorie_post');
     Route::get('reponse', [HomeController::class, 'reponse'])->name('reponse');
     Route::get('liste_categorie', [HomeController::class, 'liste_categorie'])->name('liste_categorie');

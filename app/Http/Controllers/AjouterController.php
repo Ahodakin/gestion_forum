@@ -12,12 +12,12 @@ class AjouterController extends Controller
     public function ajouter_get(Request $request)
     {
         $request->validate([
-            'id_sous'=>'required',
+            'nom_sous_categorie'=>'required',
         ]);
 
         $insert= new Users_sous_categorie ();
         $insert-> id_users=Auth::id();
-        $insert-> id_sous_categorie=$request->id_sous;
+        $insert-> id_sous_categorie = $request->nom_sous_categorie;
         $insert->save();
         return view('home.publish');
     }
@@ -30,12 +30,12 @@ class AjouterController extends Controller
             'content'=>'required',
         ]);
 
-        $sous_cat = Users_sous_categorie::where('id_users',$id_user)->get();
+        // $sous_cat = Users_sous_categorie::where('id_users',$id_user)->get();
         $publish= new Question ();
         $publish-> title=$request->title;
         $publish-> content=$request->content;
-        $publish-> id_users=$id_user;
-        $publish-> id_sous_categorie=$sous_cat->last()->id;
+        $publish-> id_users=Auth::id();
+        $publish->nom_sous_categorie = $request->nom_sous_categorie;
         $publish->save();
 
          return redirect('liste')->with('status', 'Question publié.');

@@ -24,21 +24,21 @@
             </div>
 
             <h6 class="mb-4">Ajouter une sous catégorie</h6>
-            <form action="/publish_post" method="POST">
+            <form action="{{ route('souscategorie_post') }}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="id_sous">Catégorie</label>
-                    <select class="form-select form-select-lg mb-3" name="" required>
+                    <select class="form-select form-select-lg mb-3" name="id_categorie" required>
                         <option value="" selected>Choisissez une Catégorie</option>
                         @foreach ($categorie as $categories)
-                            <option value="{{ $categories->nom }}">{{ $categories->nom }}</option>
+                            <option value="{{ $categories->id}}">{{ $categories->nom }}</option>
                         @endforeach
 
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="title">Sous Catégorie</label>
-                    <input type="text" class="form-control" name="title" value="{{ old('title') }}" required>
+                    <input type="text" class="form-control" name="nom" value="{{ old('nom') }}" required>
                 </div>
 
                 <div class="mb-3 text-center">

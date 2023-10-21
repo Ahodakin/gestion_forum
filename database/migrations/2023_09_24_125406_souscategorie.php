@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('sous_categorie', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->foreignId('id_categorie')->constrained('categorie')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_categorie');
+            $table->foreign('id_categorie')->references('id')->on('categorie');
             $table->timestamps();
         });
     }

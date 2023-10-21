@@ -25,13 +25,15 @@ class HomeController extends Controller
     {
         $recup= Question::orderBy('id', 'desc')->get();
         $categorie = Categorie::all();
-        $souscategorie = souscategorie::all();
-        return view('home.liste', compact('categorie','souscategorie', 'recup' ));
+        $souscategorie = Souscategorie::all();
+        return view('home.liste', compact('categorie', 'souscategorie', 'recup'));
+
     }
     public function categorie()
     {
         return view('home.categorie');
     }
+
     public function categorie_post(CategorieRequest $request)
     {
         $category = new Categorie();
@@ -44,6 +46,14 @@ class HomeController extends Controller
         $categorie = Categorie::all();
         return view('home.sous_categorie', compact('categorie'));
     }
+
+    public function sous_categoriepost(CategorieRequest $request){
+        $souscategory = new Souscategorie();
+        $souscategory->nom= $request->nom;
+        $souscategory->id_categorie = $request->id_categorie;
+        $souscategory->save();
+        return to_route('liste_categorie')->with('success', 'Sous catégorie enregristrée avec success');
+    }
     public function reponse()
     {
         return view('home.reponse');
@@ -51,7 +61,7 @@ class HomeController extends Controller
     public function liste_categorie()
     {
         $categorie = Categorie::orderBy('id', 'desc')->get();
-        $souscategorie = souscategorie::orderBy('id', 'desc')->get();
+        $souscategorie = souscategorie::all();
         return view('home.liste_categorie', compact('categorie','souscategorie' ));
     }
 }

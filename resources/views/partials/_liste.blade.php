@@ -63,7 +63,7 @@
                 <th scope="row">{{ $recups->id }}</th>
                 <td>{{ $recups->title }}</td>
                 <td>{{ $recups->content}}</td>
-                <td>{{ $recups->id_sous_categorie}}</td>
+                <td>{{ $recups->nom_sous_categorie}}</td>
                 <td>{{ $recups->created_at}}</td>
                 </tr>
                 @endforeach
