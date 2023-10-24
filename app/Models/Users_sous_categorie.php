@@ -14,4 +14,9 @@ class Users_sous_categorie extends Model
         'id_sous_categorie',
     ];
 
+    public function souscategorie() {
+        return $this->belongsTo(Souscategorie::class, 'id_sous_categorie', 'id');
+    }
+
+
 }

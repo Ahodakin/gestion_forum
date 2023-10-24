@@ -22,4 +22,12 @@ class Question extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    // Dans le modèle Question
+    public function souscategorie()
+    {
+        return $this->belongsTo(Souscategorie::class, 'id_sous_categorie', 'id');
+    }
+
+
 }

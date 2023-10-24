@@ -33,7 +33,6 @@
                         @foreach ($categorie as $categories)
                             <option value="{{ $categories->id}}">{{ $categories->nom }}</option>
                         @endforeach
-
                     </select>
                 </div>
                 <div class="mb-3">

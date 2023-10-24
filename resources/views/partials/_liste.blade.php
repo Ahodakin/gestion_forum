@@ -55,16 +55,31 @@
                 <th scope="col">Question</th>
                 <th scope="col">Sous Catégorie</th>
                 <th scope="col">Date</th>
+                <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                @foreach($recup as $recups)
+                @foreach($questions as $question)
                 <tr>
-                <th scope="row">{{ $recups->id }}</th>
-                <td>{{ $recups->title }}</td>
-                <td>{{ $recups->content}}</td>
-                <td>{{ $recups->nom_sous_categorie}}</td>
-                <td>{{ $recups->created_at}}</td>
+                <th scope="row">{{ $question->id }}</th>
+                <td>{{ $question->title }}</td>
+                <td>{{ $question->content}}</td>
+                <td>{{ $question->Souscategorie->nom }}</td>
+                <td>
+                    @if ($question->updated_at)
+                        {{ $question->updated_at->format('Y-m-d') }}
+                    @else
+                        {{ $question->created_at->format('Y-m-d') }}
+                    @endif
+                </td>
+
+                <td>
+                    <div class="mb-2 d-flex justify-content-end">
+                        <a href="{{ route('edit', $question) }}" class="btn btn-success">Modifier</a>
+                        <span style="margin-left: 5px;"></span>
+                        <a href="" class="btn btn-danger">Supprimer</a>
+                    </div>
+                </td>
                 </tr>
                 @endforeach
             </tbody>

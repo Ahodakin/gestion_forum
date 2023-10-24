@@ -23,10 +23,10 @@ class HomeController extends Controller
     }
     public function liste()
     {
-        $recup= Question::orderBy('id', 'desc')->get();
+        $questions= Question::orderBy('id', 'desc')->get();
         $categorie = Categorie::all();
         $souscategorie = Souscategorie::all();
-        return view('home.liste', compact('categorie', 'souscategorie', 'recup'));
+        return view('home.liste', compact('categorie', 'souscategorie', 'questions'));
 
     }
     public function categorie()

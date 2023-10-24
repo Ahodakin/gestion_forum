@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('content');
             $table->unsignedBigInteger('id_users');
             $table->foreign('id_users')->references('id')->on('users');
-            $table->string('nom_sous_categorie');
+            $table->unsignedBigInteger('id_sous_categorie');
+            $table->foreign('id_sous_categorie')->references('id')->on('sous_categorie');
             $table->timestamps();
 
         });

@@ -26,8 +26,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('liste', [HomeController::class, 'liste'])->name('liste');
 });
 
-    Route::post('/ajouter_get', [AjouterController::class, 'ajouter_get'])->name('ajouter_get');
+    // Route::post('/ajouter_get', [AjouterController::class, 'ajouter_get'])->name('ajouter_get');
     Route::post('/publish_post', [AjouterController::class, 'publish_post'])->name('publish_post');
+
+    Route::get('questions/edit{question}', [AjouterController::class, 'edit'])->name('edit');
+    Route::put('questions/{question}', [AjouterController::class, 'update'])->name('update');
 
     Route::post('login', [AuthController::class, 'loginpost'])->name('login');
     Route::get('login', [AuthController::class, 'login'])->name('login');
@@ -39,8 +42,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('publish', [HomeController::class, 'publish_question'])->name('publish');
     Route::get('categorie', [HomeController::class, 'categorie'])->name('categorie');
+
     Route::post('categorie_post', [HomeController::class, 'categorie_post'])->name('categorie_post');
+
     Route::get('sous_categorie', [HomeController::class, 'sous_categorie'])->name('sous_categorie');
     Route::post('souscategorie', [HomeController::class, 'sous_categoriepost'])->name('souscategorie_post');
+
     Route::get('reponse', [HomeController::class, 'reponse'])->name('reponse');
     Route::get('liste_categorie', [HomeController::class, 'liste_categorie'])->name('liste_categorie');
