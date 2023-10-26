@@ -50,3 +50,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('reponse', [HomeController::class, 'reponse'])->name('reponse');
     Route::get('liste_categorie', [HomeController::class, 'liste_categorie'])->name('liste_categorie');
+
+    // Route::get('supprimer', [AjouterController::class, 'supprimer'])->name('supprimer');
+    Route::delete('/questions/{question}', [AjouterController::class, 'destroy'])->name('supprimer');

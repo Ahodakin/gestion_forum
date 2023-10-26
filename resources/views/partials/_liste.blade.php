@@ -72,19 +72,26 @@
                         {{ $question->created_at->format('Y-m-d') }}
                     @endif
                 </td>
-
-                <td>
-                    <div class="mb-2 d-flex justify-content-end">
-                        <a href="{{ route('edit', $question) }}" class="btn btn-success">Modifier</a>
-                        <span style="margin-left: 5px;"></span>
-                        <a href="" class="btn btn-danger">Supprimer</a>
-                    </div>
-                </td>
-                </tr>
+                        <td>
+                            <div class="mb-2 d-flex justify-content-end">
+                                <a href="{{ route('edit', $question) }}" class="btn btn-success">Modifier</a>
+                                <span style="margin-left: 5px;"></span>
+                                <form method="POST" action="{{ route('supprimer', $question) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" name="id_users" value="{{ $question->id_users }}">
+                                    <input type="hidden" name="id_sous_categorie" value="{{ $question->id_sous_categorie }}">
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette question ?')">Supprimer</button>
+                                </form>
+                            </div>
+                        </td>
+                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+
+
 
 
 

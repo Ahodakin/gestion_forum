@@ -88,4 +88,22 @@ class AjouterController extends Controller
         return redirect()->route('liste')->with('success', 'Question modifiée avec succès');
     }
 
+    // public function supprimer(Question $question){
+    //     return view('home.supprimer',[
+    //         'question'=> $question,
+    //     ]);
+    // }
+
+    public function destroy(Request $request,  Question $question){
+        $question->delete();
+        // Récupérez les IDs de l'utilisateur et de la sous-catégorie associés à la question
+        $userId = $request->input('id_users');
+        $sousCategorieId = $request->input('id_sous_categorie');
+
+        Users_sous_categorie::where('id_users', $userId)
+        ->where('id_sous_categorie', $sousCategorieId)
+        ->delete();
+
+        return to_route('liste')->with('success', 'Question supprimer avec success');
+    }
 }
