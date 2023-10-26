@@ -21,14 +21,23 @@ class HomeController extends Controller
         $souscategorie = souscategorie::all();
         return view('home.publish', compact('categorie','souscategorie' ));
     }
-    public function liste()
+    public function liste(Request $request)
     {
-        $questions= Question::orderBy('id', 'desc')->get();
+        $souscategorieId = $request->input('souscategorie_id');
+
+        $query = Question::orderBy('id', 'desc');
+
+        if ($souscategorieId) {
+            $query->where('id_sous_categorie', $souscategorieId);
+        }
+
+        $questions = $query->get();
         $categorie = Categorie::all();
         $souscategorie = Souscategorie::all();
-        return view('home.liste', compact('categorie', 'souscategorie', 'questions'));
 
+        return view('home.liste', compact('categorie', 'souscategorie', 'questions'));
     }
+
     public function categorie()
     {
         return view('home.categorie');

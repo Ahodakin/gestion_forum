@@ -40,9 +40,22 @@
 </div>  --}}
 
     <div class="container">
+
+        <form action="{{ route('liste') }}" method="GET" class="">
+            <label for="souscategorie_id">Filtrer par sous-catégorie :</label>
+            <select name="souscategorie_id" id="souscategorie_id">
+                <option value="">Toutes les sous-catégories</option>
+                @foreach($souscategorie as $souscat)
+                    <option value="{{ $souscat->id }}" @if(request('souscategorie_id') == $souscat->id) selected @endif>{{ $souscat->nom }}</option>
+                @endforeach
+            </select>
+            <button type="submit">Filtrer</button>
+        </form>
+
         <div class="mb-2 d-flex justify-content-end">
             <a href="{{ route('publish') }}" class="btn btn-success">Ajouter</a>
         </div>
+
         <div>
             <p>Listes des questions</p>
         </div>
