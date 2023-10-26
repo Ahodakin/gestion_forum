@@ -89,6 +89,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{--  {{ $questions->links()}}  --}}
     </div>
 
 
